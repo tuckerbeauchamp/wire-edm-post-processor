@@ -12,14 +12,14 @@
   FORKID {51C1E5C7-D09E-458F-AC35-4A2CE1E0AE32}
 */
 
-description = "Jet template (DEMO ONLY)";
-vendor = "Autodesk";
-vendorUrl = "http://www.autodesk.com";
-legal = "Copyright (C) 2015-2021 by Autodesk, Inc.";
+description = "Wire Template";
+vendor = "Tucker Beauchamp";
+vendorUrl = "https://tuckerbeauchamp.com";
+legal = "Copyright (C) 2015-2021 by Tucker Beauchamp";
 certificationLevel = 2;
 minimumRevision = 45702;
 
-longDescription = "This post demonstrates the capabilities of the post processor for waterjet, laser, and plasma cutting. You can use this as a foundation when you need a post for a new CNC. Note that this post cannot be used with milling toolpath. You can only use it for 'jet' style toolpath.";
+longDescription = "This post will output gcode for wire EDM operations";
 
 extension = "nc";
 setCodePage("ascii");
@@ -38,74 +38,77 @@ allowedCircularPlanes = undefined; // allow any circular motion
 // user-defined properties
 properties = {
   writeMachine: {
-    title      : "Write machine",
+    title: "Write machine",
     description: "Output the machine settings in the header of the code.",
-    group      : 0,
-    type       : "boolean",
-    value      : true,
-    scope      : "post"
+    group: 0,
+    type: "boolean",
+    value: true,
+    scope: "post",
   },
   showSequenceNumbers: {
-    title      : "Use sequence numbers",
+    title: "Use sequence numbers",
     description: "Use sequence numbers for each block of outputted code.",
-    group      : 1,
-    type       : "boolean",
-    value      : true,
-    scope      : "post"
+    group: 1,
+    type: "boolean",
+    value: true,
+    scope: "post",
   },
   sequenceNumberStart: {
-    title      : "Start sequence number",
+    title: "Start sequence number",
     description: "The number at which to start the sequence numbers.",
-    group      : 1,
-    type       : "integer",
-    value      : 10,
-    scope      : "post"
+    group: 1,
+    type: "integer",
+    value: 10,
+    scope: "post",
   },
   sequenceNumberIncrement: {
-    title      : "Sequence number increment",
-    description: "The amount by which the sequence number is incremented by in each block.",
-    group      : 1,
-    type       : "integer",
-    value      : 5,
-    scope      : "post"
+    title: "Sequence number increment",
+    description:
+      "The amount by which the sequence number is incremented by in each block.",
+    group: 1,
+    type: "integer",
+    value: 5,
+    scope: "post",
   },
   allowHeadSwitches: {
-    title      : "Allow head switches",
-    description: "Enable to output code to allow heads to be manually switched for piercing and cutting.",
-    type       : "boolean",
-    value      : true,
-    scope      : "post"
+    title: "Allow head switches",
+    description:
+      "Enable to output code to allow heads to be manually switched for piercing and cutting.",
+    type: "boolean",
+    value: true,
+    scope: "post",
   },
   useRetracts: {
-    title      : "Use retracts",
-    description: "Output retracts, otherwise only output part contours for importing into a third-party jet application.",
-    type       : "boolean",
-    value      : true,
-    scope      : "post"
+    title: "Use retracts",
+    description:
+      "Output retracts, otherwise only output part contours for importing into a third-party jet application.",
+    type: "boolean",
+    value: true,
+    scope: "post",
   },
   separateWordsWithSpace: {
-    title      : "Separate words with space",
+    title: "Separate words with space",
     description: "Adds spaces between words if 'yes' is selected.",
-    type       : "boolean",
-    value      : true,
-    scope      : "post"
-  }
+    type: "boolean",
+    value: true,
+    scope: "post",
+  },
 };
 
-var gFormat = createFormat({prefix:"G", decimals:0});
-var mFormat = createFormat({prefix:"M", decimals:0});
+var gFormat = createFormat({ prefix: "G", decimals: 0 });
+var mFormat = createFormat({ prefix: "M", decimals: 0 });
 
-var xyzFormat = createFormat({decimals:(unit == MM ? 3 : 4)});
-var feedFormat = createFormat({decimals:(unit == MM ? 1 : 2)});
-var secFormat = createFormat({decimals:3, forceDecimal:true}); // seconds - range 0.001-1000
+var xyzFormat = createFormat({ decimals: unit == MM ? 3 : 4 });
+var feedFormat = createFormat({ decimals: unit == MM ? 1 : 2 });
+var secFormat = createFormat({ decimals: 3, forceDecimal: true }); // seconds - range 0.001-1000
 
-var xOutput = createVariable({prefix:"X"}, xyzFormat);
-var yOutput = createVariable({prefix:"Y"}, xyzFormat);
-var feedOutput = createVariable({prefix:"F"}, feedFormat);
+var xOutput = createVariable({ prefix: "X" }, xyzFormat);
+var yOutput = createVariable({ prefix: "Y" }, xyzFormat);
+var feedOutput = createVariable({ prefix: "F" }, feedFormat);
 
 // circular output
-var iOutput = createReferenceVariable({prefix:"I"}, xyzFormat);
-var jOutput = createReferenceVariable({prefix:"J"}, xyzFormat);
+var iOutput = createReferenceVariable({ prefix: "I" }, xyzFormat);
+var jOutput = createReferenceVariable({ prefix: "J" }, xyzFormat);
 
 var gMotionModal = createModal({}, gFormat); // modal group 1 // G0-G3, ...
 var gAbsIncModal = createModal({}, gFormat); // modal group 3 // G90-91
@@ -142,7 +145,6 @@ function writeComment(text) {
 }
 
 function onOpen() {
-
   if (!getProperty("separateWordsWithSpace")) {
     setWordSeparator("");
   }
@@ -170,7 +172,7 @@ function onOpen() {
       writeComment("  " + localize("model") + ": " + model);
     }
     if (description) {
-      writeComment("  " + localize("description") + ": "  + description);
+      writeComment("  " + localize("description") + ": " + description);
     }
   }
 
@@ -179,14 +181,19 @@ function onOpen() {
   }
 
   if (hasGlobalParameter("material-hardness")) {
-    writeComment("MATERIAL HARDNESS = " + getGlobalParameter("material-hardness"));
+    writeComment(
+      "MATERIAL HARDNESS = " + getGlobalParameter("material-hardness")
+    );
   }
 
-  { // stock - workpiece
+  {
+    // stock - workpiece
     var workpiece = getWorkpiece();
     var delta = Vector.diff(workpiece.upper, workpiece.lower);
     if (delta.isNonZero()) {
-      writeComment("THICKNESS = " + xyzFormat.format(workpiece.upper.z - workpiece.lower.z));
+      writeComment(
+        "THICKNESS = " + xyzFormat.format(workpiece.upper.z - workpiece.lower.z)
+      );
     }
   }
 
@@ -194,12 +201,12 @@ function onOpen() {
   writeBlock(gAbsIncModal.format(90));
 
   switch (unit) {
-  case IN:
-    writeBlock(gUnitModal.format(20));
-    break;
-  case MM:
-    writeBlock(gUnitModal.format(21));
-    break;
+    case IN:
+      writeBlock(gUnitModal.format(20));
+      break;
+    case MM:
+      writeBlock(gUnitModal.format(21));
+      break;
   }
 }
 
@@ -220,15 +227,22 @@ function forceAny() {
 }
 
 function onSection() {
-  var insertToolCall = isFirstSection() ||
-    currentSection.getForceToolChange && currentSection.getForceToolChange() ||
-    (tool.number != getPreviousSection().getTool().number);
+  var insertToolCall =
+    isFirstSection() ||
+    (currentSection.getForceToolChange &&
+      currentSection.getForceToolChange()) ||
+    tool.number != getPreviousSection().getTool().number;
 
   var retracted = false; // specifies that the tool has been retracted to the safe plane
-  var newWorkOffset = isFirstSection() ||
-    (getPreviousSection().workOffset != currentSection.workOffset); // work offset changes
-  var newWorkPlane = isFirstSection() ||
-    !isSameDirection(getPreviousSection().getGlobalFinalToolAxis(), currentSection.getGlobalInitialToolAxis());
+  var newWorkOffset =
+    isFirstSection() ||
+    getPreviousSection().workOffset != currentSection.workOffset; // work offset changes
+  var newWorkPlane =
+    isFirstSection() ||
+    !isSameDirection(
+      getPreviousSection().getGlobalFinalToolAxis(),
+      currentSection.getGlobalInitialToolAxis()
+    );
 
   writeln("");
 
@@ -244,23 +258,23 @@ function onSection() {
     onCommand(COMMAND_COOLANT_OFF);
 
     switch (tool.type) {
-    case TOOL_WATER_JET:
-      writeComment("Waterjet cutting.");
-      break;
-    case TOOL_LASER_CUTTER:
-      writeComment("Laser cutting");
-      break;
-    case TOOL_PLASMA_CUTTER:
-      writeComment("Plasma cutting");
-      break;
-    /*
+      case TOOL_WATER_JET:
+        writeComment("Waterjet cutting.");
+        break;
+      case TOOL_LASER_CUTTER:
+        writeComment("Laser cutting");
+        break;
+      case TOOL_PLASMA_CUTTER:
+        writeComment("Plasma cutting");
+        break;
+      /*
     case TOOL_MARKER:
       writeComment("Marker");
       break;
     */
-    default:
-      error(localize("The CNC does not support the required tool."));
-      return;
+      default:
+        error(localize("The CNC does not support the required tool."));
+        return;
     }
     writeln("");
 
@@ -269,18 +283,18 @@ function onSection() {
     writeln("");
 
     switch (currentSection.jetMode) {
-    case JET_MODE_THROUGH:
-      writeComment("THROUGH CUTTING");
-      break;
-    case JET_MODE_ETCHING:
-      writeComment("ETCH CUTTING");
-      break;
-    case JET_MODE_VAPORIZE:
-      writeComment("VAPORIZE CUTTING");
-      break;
-    default:
-      error(localize("Unsupported cutting mode."));
-      return;
+      case JET_MODE_THROUGH:
+        writeComment("THROUGH CUTTING");
+        break;
+      case JET_MODE_ETCHING:
+        writeComment("ETCH CUTTING");
+        break;
+      case JET_MODE_VAPORIZE:
+        writeComment("VAPORIZE CUTTING");
+        break;
+      default:
+        error(localize("Unsupported cutting mode."));
+        return;
     }
     writeComment("QUALITY = " + currentSection.quality);
 
@@ -322,7 +336,8 @@ function onSection() {
 
   forceXYZ();
 
-  { // pure 3D
+  {
+    // pure 3D
     var remaining = currentSection.workPlane;
     if (!isSameDirection(remaining.forward, new Vector(0, 0, 1))) {
       error(localize("Tool orientation is not supported."));
@@ -347,7 +362,6 @@ function onSection() {
 
   split = false;
   if (getProperty("useRetracts")) {
-
     var initialPosition = getFramePosition(currentSection.getInitialPosition());
 
     if (insertToolCall || retracted) {
@@ -356,7 +370,9 @@ function onSection() {
       if (!machineConfiguration.isHeadConfiguration()) {
         writeBlock(
           gAbsIncModal.format(90),
-          gMotionModal.format(0), xOutput.format(initialPosition.x), yOutput.format(initialPosition.y)
+          gMotionModal.format(0),
+          xOutput.format(initialPosition.x),
+          yOutput.format(initialPosition.y)
         );
       } else {
         writeBlock(
@@ -403,7 +419,7 @@ var shapeSide = "inner";
 var cuttingSequence = "";
 
 function onParameter(name, value) {
-  if ((name == "action") && (value == "pierce")) {
+  if (name == "action" && value == "pierce") {
     writeComment("RUN POINT-PIERCE COMMAND HERE");
   } else if (name == "shapeArea") {
     shapeArea = value;
@@ -456,8 +472,10 @@ function onPower(power) {
 }
 
 function onRapid(_x, _y, _z) {
-
-  if (!getProperty("useRetracts") && ((movement == MOVEMENT_RAPID) || (movement == MOVEMENT_HIGH_FEED))) {
+  if (
+    !getProperty("useRetracts") &&
+    (movement == MOVEMENT_RAPID || movement == MOVEMENT_HIGH_FEED)
+  ) {
     doSplit();
     return;
   }
@@ -472,7 +490,11 @@ function onRapid(_x, _y, _z) {
   var y = yOutput.format(_y);
   if (x || y) {
     if (pendingRadiusCompensation >= 0) {
-      error(localize("Radius compensation mode cannot be changed at rapid traversal."));
+      error(
+        localize(
+          "Radius compensation mode cannot be changed at rapid traversal."
+        )
+      );
       return;
     }
     writeBlock(gMotionModal.format(0), x, y);
@@ -481,8 +503,10 @@ function onRapid(_x, _y, _z) {
 }
 
 function onLinear(_x, _y, _z, feed) {
-
-  if (!getProperty("useRetracts") && ((movement == MOVEMENT_RAPID) || (movement == MOVEMENT_HIGH_FEED))) {
+  if (
+    !getProperty("useRetracts") &&
+    (movement == MOVEMENT_RAPID || movement == MOVEMENT_HIGH_FEED)
+  ) {
     doSplit();
     return;
   }
@@ -504,23 +528,24 @@ function onLinear(_x, _y, _z, feed) {
     if (pendingRadiusCompensation >= 0) {
       pendingRadiusCompensation = -1;
       switch (radiusCompensation) {
-      case RADIUS_COMPENSATION_LEFT:
-        writeBlock(gFormat.format(41));
-        writeBlock(gMotionModal.format(1), x, y, f);
-        break;
-      case RADIUS_COMPENSATION_RIGHT:
-        writeBlock(gFormat.format(42));
-        writeBlock(gMotionModal.format(1), x, y, f);
-        break;
-      default:
-        writeBlock(gFormat.format(40));
-        writeBlock(gMotionModal.format(1), x, y, f);
+        case RADIUS_COMPENSATION_LEFT:
+          writeBlock(gFormat.format(41));
+          writeBlock(gMotionModal.format(1), x, y, f);
+          break;
+        case RADIUS_COMPENSATION_RIGHT:
+          writeBlock(gFormat.format(42));
+          writeBlock(gMotionModal.format(1), x, y, f);
+          break;
+        default:
+          writeBlock(gFormat.format(40));
+          writeBlock(gMotionModal.format(1), x, y, f);
       }
     } else {
       writeBlock(gMotionModal.format(1), x, y, f);
     }
   } else if (f) {
-    if (getNextRecord().isMotion()) { // try not to output feed without motion
+    if (getNextRecord().isMotion()) {
+      // try not to output feed without motion
       feedOutput.reset(); // force feed on next line
     } else {
       writeBlock(gMotionModal.format(1), f);
@@ -558,8 +583,10 @@ function resumeFromSplit(feed) {
 }
 
 function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
-
-  if (!getProperty("useRetracts") && ((movement == MOVEMENT_RAPID) || (movement == MOVEMENT_HIGH_FEED))) {
+  if (
+    !getProperty("useRetracts") &&
+    (movement == MOVEMENT_RAPID || movement == MOVEMENT_HIGH_FEED)
+  ) {
     doSplit();
     return;
   }
@@ -567,7 +594,11 @@ function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
   // one of X/Y and I/J are required and likewise
 
   if (pendingRadiusCompensation >= 0) {
-    error(localize("Radius compensation cannot be activated/deactivated for a circular move."));
+    error(
+      localize(
+        "Radius compensation cannot be activated/deactivated for a circular move."
+      )
+    );
     return;
   }
 
@@ -582,47 +613,60 @@ function onCircular(clockwise, cx, cy, cz, x, y, z, feed) {
       return;
     }
     switch (getCircularPlane()) {
-    case PLANE_XY:
-      writeBlock(gMotionModal.format(clockwise ? 2 : 3), xOutput.format(x), iOutput.format(cx - start.x, 0), jOutput.format(cy - start.y, 0), feedOutput.format(feed));
-      break;
-    default:
-      linearize(tolerance);
+      case PLANE_XY:
+        writeBlock(
+          gMotionModal.format(clockwise ? 2 : 3),
+          xOutput.format(x),
+          iOutput.format(cx - start.x, 0),
+          jOutput.format(cy - start.y, 0),
+          feedOutput.format(feed)
+        );
+        break;
+      default:
+        linearize(tolerance);
     }
   } else {
     switch (getCircularPlane()) {
-    case PLANE_XY:
-      writeBlock(gMotionModal.format(clockwise ? 2 : 3), xOutput.format(x), yOutput.format(y), iOutput.format(cx - start.x, 0), jOutput.format(cy - start.y, 0), feedOutput.format(feed));
-      break;
-    default:
-      linearize(tolerance);
+      case PLANE_XY:
+        writeBlock(
+          gMotionModal.format(clockwise ? 2 : 3),
+          xOutput.format(x),
+          yOutput.format(y),
+          iOutput.format(cx - start.x, 0),
+          jOutput.format(cy - start.y, 0),
+          feedOutput.format(feed)
+        );
+        break;
+      default:
+        linearize(tolerance);
     }
   }
 }
 
 var mapCommand = {
-  COMMAND_STOP         : 0,
+  COMMAND_STOP: 0,
   COMMAND_OPTIONAL_STOP: 1,
-  COMMAND_END          : 2
+  COMMAND_END: 2,
 };
 
 function onCommand(command) {
   switch (command) {
-  case COMMAND_POWER_ON:
-    return;
-  case COMMAND_POWER_OFF:
-    return;
-  case COMMAND_COOLANT_ON:
-    return;
-  case COMMAND_COOLANT_OFF:
-    return;
-  case COMMAND_LOCK_MULTI_AXIS:
-    return;
-  case COMMAND_UNLOCK_MULTI_AXIS:
-    return;
-  case COMMAND_BREAK_CONTROL:
-    return;
-  case COMMAND_TOOL_MEASURE:
-    return;
+    case COMMAND_POWER_ON:
+      return;
+    case COMMAND_POWER_OFF:
+      return;
+    case COMMAND_COOLANT_ON:
+      return;
+    case COMMAND_COOLANT_OFF:
+      return;
+    case COMMAND_LOCK_MULTI_AXIS:
+      return;
+    case COMMAND_UNLOCK_MULTI_AXIS:
+      return;
+    case COMMAND_BREAK_CONTROL:
+      return;
+    case COMMAND_TOOL_MEASURE:
+      return;
   }
 
   var stringId = getCommandStringId(command);
