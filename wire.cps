@@ -470,7 +470,8 @@ function setDeviceMode(enable) {
 
 function onPower(power) {
   setDeviceMode(power);
-  writeBlock(tFormat.format(91))
+  writeComment("Muahah");
+  writeBlock(tFormat.format(91));
   // writeBlock(gFormat.format(41));
 }
 
