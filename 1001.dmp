@@ -1,0 +1,610 @@
+  Post Engine Version = 4.5805.0
+  Program Name = 1001
+  Program Comment = 
+-1: onOpen()
+0: onParameter('product-id', 'fusion360')
+1: onParameter('generated-by', 'Fusion 360 CAM 2.0.11415')
+2: onParameter('generated-at', 'Fri Nov 19 04:02:08 2021')
+3: onParameter('hostname', 'C02D9121ML87')
+4: onParameter('username', 'root')
+5: onParameter('document-path', 'wire-edm-test v2')
+6: onParameter('document-id', 'b416504f-9cdc-47cc-b9a4-918d84851f4e')
+7: onParameter('model-version', 'ff936204-19a3-453f-80d4-1725773272c4')
+9: onParameter('leads-supported', 1)
+10: onParameter('job-description', 'Setup7')
+11: onParameter('stock-type', 'box')
+13: onParameter('stock', '((-77.216, -51.816, -13.716), (77.216, 51.816, 0))')
+15: onParameter('stock-lower-x', -3.040000000000001)
+17: onParameter('stock-lower-y', -2.0399999999999996)
+19: onParameter('stock-lower-z', -0.5399999999999999)
+21: onParameter('stock-upper-x', 3.040000000000001)
+23: onParameter('stock-upper-y', 2.0399999999999996)
+25: onParameter('stock-upper-z', 0)
+27: onParameter('part-lower-x', -3.0000000000000004)
+29: onParameter('part-lower-y', -1.9999999999999998)
+31: onParameter('part-lower-z', -0.5399999999999999)
+33: onParameter('part-upper-x', 3.0000000000000004)
+35: onParameter('part-upper-y', 1.9999999999999998)
+37: onParameter('part-upper-z', -0.04)
+42: onParameter('notes', '')
+43: onParameter('operation-strategy', 'jet2d')
+44: onParameter('operation-comment', '2D Profile3')
+45: onParameter('autodeskcam:operation-id', 13)
+46: onParameter('leads-supported', 1)
+47: onParameter('autodeskcam:path', 'Setups\Setup7\2D Profile3')
+48: onParameter('operation:is2DStrategy', 1)
+49: onParameter('operation:is3DStrategy', 0)
+50: onParameter('operation:isRoughingStrategy', 0)
+51: onParameter('operation:isFinishingStrategy', 1)
+52: onParameter('operation:isMillingStrategy', 0)
+53: onParameter('operation:isTurningStrategy', 0)
+54: onParameter('operation:isJetStrategy', 1)
+55: onParameter('operation:isAdditiveStrategy', 0)
+56: onParameter('operation:isProbingStrategy', 0)
+57: onParameter('operation:isInspectionStrategy', 0)
+58: onParameter('operation:isDrillingStrategy', 0)
+59: onParameter('operation:isHoleMillingStrategy', 0)
+60: onParameter('operation:isThreadStrategy', 0)
+61: onParameter('operation:isSamplingStrategy', 0)
+62: onParameter('operation:isRotaryStrategy', 0)
+63: onParameter('operation:isSecondarySpindleStrategy', 0)
+64: onParameter('operation:isSurfaceStrategy', 0)
+65: onParameter('operation:isCheckSurfaceStrategy', 0)
+66: onParameter('operation:isMultiAxisStrategy', 0)
+67: onParameter('operation:advancedMode', 0)
+68: onParameter('operation:betaMode', 0)
+69: onParameter('operation:alphaMode', 0)
+70: onParameter('operation:isXpress', 0)
+71: onParameter('operation:licenseMultiaxis', 1)
+72: onParameter('operation:license3D', 1)
+73: onParameter('operation:metric', 0)
+74: onParameter('operation:isAssemblyDocument', 1)
+75: onParameter('operation:context', 'operation')
+76: onParameter('operation:strategy', 'jet2d')
+77: onParameter('operation:operation_description', '')
+78: onParameter('operation:tool_type', 'waterjet')
+79: onParameter('operation:tool_isTurning', 0)
+80: onParameter('operation:tool_isMill', 0)
+81: onParameter('operation:tool_isDrill', 0)
+82: onParameter('operation:tool_isJet', 1)
+83: onParameter('operation:tool_isDepositing', 0)
+84: onParameter('operation:tool_unit', 'inches')
+85: onParameter('operation:tool_number', 1)
+86: onParameter('operation:tool_diameterOffset', 1)
+87: onParameter('operation:tool_description', 'Wire EDM')
+88: onParameter('operation:tool_comment', '')
+89: onParameter('operation:tool_vendor', '')
+90: onParameter('operation:tool_productId', '')
+92: onParameter('operation:tool_segmentHeight', 0.4)
+94: onParameter('operation:tool_segmentDiameterLower', 0.4)
+96: onParameter('operation:tool_segmentDiameterUpper', 0.4)
+98: onParameter('operation:tool_shaftSegmentHeight', 0.03937007874015748)
+100: onParameter('operation:tool_shaftSegmentDiameterLower', 0.03937007874015748)
+102: onParameter('operation:tool_shaftSegmentDiameterUpper', 0.03937007874015748)
+104: onParameter('operation:tool_kerfWidth', 0.0012999999999999997)
+106: onParameter('operation:tool_nozzleDiameter', 0.05)
+108: onParameter('operation:tool_headClearance', 0.0393701)
+109: onParameter('operation:tool_machineQualityControl', 'manual')
+110: onParameter('operation:holder_attached', 0)
+111: onParameter('operation:holder_description', 'HSK63 - Blank')
+112: onParameter('operation:holder_comment', '')
+113: onParameter('operation:holder_vendor', '')
+114: onParameter('operation:holder_productId', '')
+115: onParameter('operation:holder_productLink', '')
+116: onParameter('operation:holder_libraryName', '')
+117: onParameter('operation:tool_productLink', 'http://cam.autodesk.com/')
+118: onParameter('operation:cuttingMode', 'auto')
+120: onParameter('operation:kerfWidth', 0.0012999999999999997)
+121: onParameter('operation:machineQualityControl', 'manual')
+123: onParameter('operation:tool_feedCutting', 39.37007874015752)
+125: onParameter('operation:tool_feedEntry', 39.37007874015752)
+127: onParameter('operation:tool_feedExit', 39.37007874015752)
+128: onParameter('operation:featureOperationId', 'none')
+130: onParameter('operation:surfaceZHigh', -0.04)
+132: onParameter('operation:surfaceZLow', -0.5399999999999999)
+134: onParameter('operation:surfaceXLow', -3.0000000000000004)
+136: onParameter('operation:surfaceXHigh', 3.0000000000000004)
+138: onParameter('operation:surfaceYLow', -1.9999999999999998)
+140: onParameter('operation:surfaceYHigh', 1.9999999999999998)
+142: onParameter('operation:stockZHigh', 0)
+144: onParameter('operation:stockZLow', -0.5399999999999999)
+146: onParameter('operation:stockXLow', -3.040000000000001)
+148: onParameter('operation:stockXHigh', 3.040000000000001)
+150: onParameter('operation:stockYLow', -2.0399999999999996)
+152: onParameter('operation:stockYHigh', 2.0399999999999996)
+153: onParameter('operation:selectCoPlanarFaces', 0)
+154: onParameter('operation:contours_loops', 'all')
+155: onParameter('operation:contours_side', 'start-outside')
+157: onParameter('operation:tabWidth', 0.05)
+158: onParameter('operation:tabPositioning', 'points')
+160: onParameter('operation:tabDistance', 1.9999999999999998)
+161: onParameter('operation:clearanceHeight_mode', 'from stock top')
+163: onParameter('operation:clearanceHeight_offset', 0.49999999999999994)
+165: onParameter('operation:clearanceHeight_value', 0.49999999999999994)
+166: onParameter('operation:clearanceHeight_absolute', 1)
+167: onParameter('operation:retractHeight_mode', 'from stock top')
+169: onParameter('operation:retractHeight_offset', 0.05)
+171: onParameter('operation:retractHeight_value', 0.05)
+172: onParameter('operation:retractHeight_absolute', 1)
+173: onParameter('operation:topHeight_mode', 'from point')
+175: onParameter('operation:topHeight_offset', 0.05)
+177: onParameter('operation:topHeight_value', 0.01)
+178: onParameter('operation:topHeight_absolute', 1)
+180: onParameter('operation:tolerance', 0.0004)
+182: onParameter('operation:contourTolerance', 0.0002)
+184: onParameter('operation:calculationTolerance', 0.0004)
+186: onParameter('operation:chainingTolerance', 0.0004)
+188: onParameter('operation:gougingTolerance', 0.0004)
+189: onParameter('operation:compensation', 'left')
+190: onParameter('operation:compensationType', 'computer')
+192: onParameter('operation:finishingOverlap', 0)
+193: onParameter('operation:cornerMode', 'roll')
+194: onParameter('operation:preserveOrder', 0)
+195: onParameter('operation:bothWaysJL', 0)
+197: onParameter('operation:stockToLeave', 0)
+199: onParameter('operation:smoothingFilterTolerance', 0)
+201: onParameter('operation:reducedFeedChange', 25)
+203: onParameter('operation:reducedFeedRadius', 0)
+205: onParameter('operation:reducedFeedDistance', 0)
+207: onParameter('operation:reducedFeedrate', 9.84251968503938)
+208: onParameter('operation:reduceOnlyInnerCorners', 0)
+209: onParameter('operation:keepToolDown', 0)
+211: onParameter('operation:stayDownDistance', 0)
+213: onParameter('operation:minimumStayDownClearance', 0)
+215: onParameter('operation:minimumStayDownClearanceJl', 0)
+216: onParameter('operation:forceRetractForInsideCut', 0)
+218: onParameter('operation:noEngagementFeedrate', 39.37007874015752)
+219: onParameter('operation:doLeadIn', 1)
+220: onParameter('operation:entry_style', 'smooth')
+222: onParameter('operation:entry_radius', 0)
+224: onParameter('operation:entry_sweep', 90)
+226: onParameter('operation:entry_distance', 0.19685039370078738)
+228: onParameter('operation:leadInRadius', 0)
+229: onParameter('operation:doLeadOut', 1)
+230: onParameter('operation:exit_sameAsEntry', 1)
+231: onParameter('operation:exit_style', 'smooth')
+233: onParameter('operation:exit_radius', 0)
+235: onParameter('operation:exit_sweep', 90)
+237: onParameter('operation:exit_distance', 0.19685039370078738)
+239: onParameter('operation:leadOutRadius', 0)
+241: onParameter('operation:pierceClearance', 0.0012999999999999997)
+244: onParameter('movement:lead_in', 39.37007874015752)
+245: onParameter('movement:cutting', 39.37007874015752)
+246: onParameter('movement:lead_out', 39.37007874015752)
+247: onParameter('movement:transition', 39.37007874015752)
+248: onParameter('movement:direct', 39.37007874015752)
+249: onParameter('movement:helix_ramp', 39.37007874015752)
+250: onParameter('movement:profile_ramp', 39.37007874015752)
+251: onParameter('movement:zigzag_ramp', 39.37007874015752)
+252: onParameter('movement:ramp', 39.37007874015752)
+253: onParameter('movement:plunge', 0)
+254: onParameter('movement:predrill', 39.37007874015752)
+255: onParameter('movement:extended', 39.37007874015752)
+256: onParameter('movement:reduced', 39.37007874015752)
+257: onParameter('movement:finish_cutting', 39.37007874015752)
+258: onParameter('movement:high_feed', 0)
+259: onParameter('movement:depositing', 0)
+260: onSection()
+  currentSection.unit=1
+  currentSection.workOrigin=(0, 0, 0)
+  currentSection.workPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.wcsOrigin=(0, 0, 0)
+  currentSection.wcsPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.workOffset=0
+  currentSection.probeWorkOffset=0
+  currentSection.wcs=''
+  currentSection.wcsIndex=-1
+  currentSection.dynamicWCSOrigin=(0, 0, 0)
+  currentSection.dynamicWCSPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.dynamicWorkOffset=0
+  currentSection.fcsOrigin=(0, 0, -0.54)
+  currentSection.fcsPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.modelOrigin=(-0, -0, -0.54)
+  currentSection.modelPlane=[[1, -0, 0], [0, 1, -0], [0, 0, 1]]
+  currentSection.type=3 (TYPE_JET)
+  currentSection.quality=0 ({AUTO})
+  currentSection.jetMode=0 (JET_MODE_THROUGH)
+  currentSection.tailstock=false
+  currentSection.partCatcher=false
+  currentSection.spindle=0
+  currentSection.feedMode=0
+  currentSection.toolOrientation=0
+  currentSection.properties=[object Object]
+  currentSection.strategy='jet2d' (STRATEGY_2D STRATEGY_FINISHING STRATEGY_JET )
+  tool.toolId='1'
+  tool.number=1
+  tool.diameterOffset=1
+  tool.lengthOffset=1
+  tool.secondaryLengthOffset=0
+  tool.turningTool=false
+  tool.jetTool=true
+  tool.holderNumber=0
+  tool.surfaceSpeed=0
+  tool.maximumSpindleSpeed=0
+  tool.spindleRPM=0
+  tool.rampingSpindleRPM=0
+  tool.clockwise=true
+  tool.numberOfFlutes=1
+  tool.threadPitch=0
+  tool.coolant=0
+  tool.material=0
+  tool.description='Wire EDM'
+  tool.comment=''
+  tool.vendor=''
+  tool.productId=''
+  tool.holderDescription='HSK63 - Blank'
+  tool.holderComment=''
+  tool.holderVendor=''
+  tool.holderProductId=''
+  tool.aggregateId=''
+  tool.unit=0
+  tool.type=29 (TOOL_WATER_JET, water jet)
+  tool.diameter=0
+  tool.tipDiameter=0
+  tool.cornerRadius=0
+  tool.taperAngle=0
+  tool.fluteLength=0
+  tool.shoulderLength=0
+  tool.shaftDiameter=0
+  tool.bodyLength=0
+  tool.overallLength=0
+  tool.shaft=[object Shaft]
+  tool.jetDiameter=0.0012999999999999997
+  tool.jetDistance=0.6287401574803149
+  tool.holderTipDiameter=1.9842520285779097
+  tool.holderDiameter=2.4803149606299213
+  tool.holderLength=1.6535433070866141
+  tool.holder=[object Holder]
+  tool.boringBarOrientation=0
+  tool.compensationOffset=0
+  tool.secondaryCompensationOffset=0
+  tool.turret=0
+  tool.insertType=3 (TURNING_INSERT_ISO_C)
+  tool.holderType=0 (TURNING_INSERT_USER_DEFINED)
+  tool.compensationMode=0 (TOOL_COMPENSATION_INSERT_CENTER)
+  tool.inscribedCircleDiameter=0
+  tool.edgeLength=0
+  tool.noseRadius=0
+  tool.reliefAngle=0
+  tool.thickness=0
+  tool.grooveWidth=0
+  tool.crossSection=''
+  tool.tolerance='M'
+  tool.pitch=0
+  tool.hand='R'
+  tool.clamping=''
+  tool.manualToolChange=false
+  tool.breakControl=false
+  tool.liveTool=true
+  tool.tappingFeedrate=0
+  tool.holder[0] H=0 D=1.9842520285779097
+  tool.holder[1] H=0.03937007874015748 D=2.0629921860582248
+  tool.holder[2] H=0.5905511811023622 D=2.0629921860582248
+  tool.holder[3] H=0 D=2.440944881889764
+  tool.holder[4] H=0.01968503937007874 D=2.4803149606299213
+  tool.holder[5] H=0.1377952755905512 D=2.4803149606299213
+  tool.holder[6] H=0.03937007874015748 D=2.343936980239988
+  tool.holder[7] H=0 D=2.284881862129752
+  tool.holder[8] H=0.07874015748031496 D=2.284881862129752
+  tool.holder[9] H=0 D=2.343936980239988
+  tool.holder[10] H=0.03937007874015748 D=2.4803149606299213
+  tool.holder[11] H=0.6889763779527559 D=2.4803149606299213
+  tool.holder[12] H=0.01968503937007874 D=2.440944881889764
+  STATE position=[0.802223, 0.030288, 0.5]
+  STATE power=OFF
+  STATE radiusCompensation=RADIUS_COMPENSATION_OFF // off
+261: onRapid(0.8022232506218857, 0.030288424078873763, 0.4999999924907534)
+262: onRapid(0.8022232506218857, 0.030288424078873763, 0.01000000031914298)
+263: onPower(true)
+263: onCommand(COMMAND_POWER_ON)
+264: onParameter('action', 'pierce')
+265: onMovement(MOVEMENT_LEAD_IN /*lead in*/)
+265: onLinear(0.9990198781171182, 0.025686147644763856, 0.01000000031914298, 39.37007874015748)
+266: onMovement(MOVEMENT_CUTTING /*cutting*/)
+266: onCircular(false, -6.993530863780514e-17, 6.993530863780514e-17, 0.01000000031914298, 0.9990207792267086, -0.025650600748737967, 0.01000000031914298, 39.37007874015748)
+  direction: CCW
+  sweep: 357.056384deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.99935
+267: onMovement(MOVEMENT_LEAD_OUT /*lead out*/)
+267: onLinear(0.8022243019164078, -0.0302598795552892, 0.01000000031914298, 39.37007874015748)
+268: onPower(false)
+268: onCommand(COMMAND_POWER_OFF)
+269: onMovement(MOVEMENT_RAPID /*rapid*/)
+269: onRapid(0.8022243019164078, -0.0302598795552892, 0.4999999924907534)
+270: onSectionEnd()
+  STATE position=[0.802224, -0.03026, 0.5]
+  STATE power=OFF
+  STATE radiusCompensation=RADIUS_COMPENSATION_OFF // off
+272: onComment('TEST - 1')
+274: onParameter('notes', '')
+275: onParameter('operation-strategy', 'jet2d')
+276: onParameter('operation-comment', '2D Profile4')
+277: onParameter('autodeskcam:operation-id', 19)
+278: onParameter('leads-supported', 1)
+279: onParameter('autodeskcam:path', 'Setups\Setup7\2D Profile4')
+280: onParameter('operation:is2DStrategy', 1)
+281: onParameter('operation:is3DStrategy', 0)
+282: onParameter('operation:isRoughingStrategy', 0)
+283: onParameter('operation:isFinishingStrategy', 1)
+284: onParameter('operation:isMillingStrategy', 0)
+285: onParameter('operation:isTurningStrategy', 0)
+286: onParameter('operation:isJetStrategy', 1)
+287: onParameter('operation:isAdditiveStrategy', 0)
+288: onParameter('operation:isProbingStrategy', 0)
+289: onParameter('operation:isInspectionStrategy', 0)
+290: onParameter('operation:isDrillingStrategy', 0)
+291: onParameter('operation:isHoleMillingStrategy', 0)
+292: onParameter('operation:isThreadStrategy', 0)
+293: onParameter('operation:isSamplingStrategy', 0)
+294: onParameter('operation:isRotaryStrategy', 0)
+295: onParameter('operation:isSecondarySpindleStrategy', 0)
+296: onParameter('operation:isSurfaceStrategy', 0)
+297: onParameter('operation:isCheckSurfaceStrategy', 0)
+298: onParameter('operation:isMultiAxisStrategy', 0)
+299: onParameter('operation:advancedMode', 0)
+300: onParameter('operation:betaMode', 0)
+301: onParameter('operation:alphaMode', 0)
+302: onParameter('operation:isXpress', 0)
+303: onParameter('operation:licenseMultiaxis', 1)
+304: onParameter('operation:license3D', 1)
+305: onParameter('operation:metric', 0)
+306: onParameter('operation:isAssemblyDocument', 1)
+307: onParameter('operation:context', 'operation')
+308: onParameter('operation:strategy', 'jet2d')
+309: onParameter('operation:operation_description', '')
+310: onParameter('operation:tool_type', 'waterjet')
+311: onParameter('operation:tool_isTurning', 0)
+312: onParameter('operation:tool_isMill', 0)
+313: onParameter('operation:tool_isDrill', 0)
+314: onParameter('operation:tool_isJet', 1)
+315: onParameter('operation:tool_isDepositing', 0)
+316: onParameter('operation:tool_unit', 'inches')
+317: onParameter('operation:tool_number', 1)
+318: onParameter('operation:tool_diameterOffset', 1)
+319: onParameter('operation:tool_description', 'Wire EDM')
+320: onParameter('operation:tool_comment', '')
+321: onParameter('operation:tool_vendor', '')
+322: onParameter('operation:tool_productId', '')
+324: onParameter('operation:tool_segmentHeight', 0.4)
+326: onParameter('operation:tool_segmentDiameterLower', 0.4)
+328: onParameter('operation:tool_segmentDiameterUpper', 0.4)
+330: onParameter('operation:tool_shaftSegmentHeight', 0.03937007874015748)
+332: onParameter('operation:tool_shaftSegmentDiameterLower', 0.03937007874015748)
+334: onParameter('operation:tool_shaftSegmentDiameterUpper', 0.03937007874015748)
+336: onParameter('operation:tool_kerfWidth', 0.0012999999999999997)
+338: onParameter('operation:tool_nozzleDiameter', 0.05)
+340: onParameter('operation:tool_headClearance', 0.0393701)
+341: onParameter('operation:tool_machineQualityControl', 'manual')
+342: onParameter('operation:holder_attached', 0)
+343: onParameter('operation:holder_description', 'HSK63 - Blank')
+344: onParameter('operation:holder_comment', '')
+345: onParameter('operation:holder_vendor', '')
+346: onParameter('operation:holder_productId', '')
+347: onParameter('operation:holder_productLink', '')
+348: onParameter('operation:holder_libraryName', '')
+349: onParameter('operation:tool_productLink', 'http://cam.autodesk.com/')
+350: onParameter('operation:cuttingMode', 'auto')
+352: onParameter('operation:kerfWidth', 0.0012999999999999997)
+353: onParameter('operation:machineQualityControl', 'manual')
+355: onParameter('operation:tool_feedCutting', 39.37007874015752)
+357: onParameter('operation:tool_feedEntry', 39.37007874015752)
+359: onParameter('operation:tool_feedExit', 39.37007874015752)
+360: onParameter('operation:featureOperationId', 'none')
+362: onParameter('operation:surfaceZHigh', -0.04)
+364: onParameter('operation:surfaceZLow', -0.5399999999999999)
+366: onParameter('operation:surfaceXLow', -3.0000000000000004)
+368: onParameter('operation:surfaceXHigh', 3.0000000000000004)
+370: onParameter('operation:surfaceYLow', -1.9999999999999998)
+372: onParameter('operation:surfaceYHigh', 1.9999999999999998)
+374: onParameter('operation:stockZHigh', 0)
+376: onParameter('operation:stockZLow', -0.5399999999999999)
+378: onParameter('operation:stockXLow', -3.040000000000001)
+380: onParameter('operation:stockXHigh', 3.040000000000001)
+382: onParameter('operation:stockYLow', -2.0399999999999996)
+384: onParameter('operation:stockYHigh', 2.0399999999999996)
+385: onParameter('operation:selectCoPlanarFaces', 0)
+386: onParameter('operation:contours_loops', 'all')
+387: onParameter('operation:contours_side', 'start-outside')
+389: onParameter('operation:tabWidth', 0.1)
+390: onParameter('operation:tabPositioning', 'distance')
+392: onParameter('operation:tabDistance', 1.9999999999999998)
+393: onParameter('operation:clearanceHeight_mode', 'from retract height')
+395: onParameter('operation:clearanceHeight_offset', 0.4)
+397: onParameter('operation:clearanceHeight_value', 0.6)
+398: onParameter('operation:clearanceHeight_absolute', 1)
+399: onParameter('operation:retractHeight_mode', 'from stock top')
+401: onParameter('operation:retractHeight_offset', 0.2)
+403: onParameter('operation:retractHeight_value', 0.2)
+404: onParameter('operation:retractHeight_absolute', 1)
+405: onParameter('operation:topHeight_mode', 'from stock top')
+407: onParameter('operation:topHeight_offset', 0)
+409: onParameter('operation:topHeight_value', 0)
+410: onParameter('operation:topHeight_absolute', 1)
+412: onParameter('operation:tolerance', 0.0004)
+414: onParameter('operation:contourTolerance', 0.0002)
+416: onParameter('operation:calculationTolerance', 0.0004)
+418: onParameter('operation:chainingTolerance', 0.0004)
+420: onParameter('operation:gougingTolerance', 0.0004)
+421: onParameter('operation:compensation', 'left')
+422: onParameter('operation:compensationType', 'computer')
+424: onParameter('operation:finishingOverlap', 0)
+425: onParameter('operation:cornerMode', 'roll')
+426: onParameter('operation:preserveOrder', 0)
+427: onParameter('operation:bothWaysJL', 0)
+429: onParameter('operation:stockToLeave', 0)
+431: onParameter('operation:smoothingFilterTolerance', 0)
+433: onParameter('operation:reducedFeedChange', 25)
+435: onParameter('operation:reducedFeedRadius', 0)
+437: onParameter('operation:reducedFeedDistance', 0)
+439: onParameter('operation:reducedFeedrate', 9.84251968503938)
+440: onParameter('operation:reduceOnlyInnerCorners', 0)
+441: onParameter('operation:keepToolDown', 0)
+443: onParameter('operation:stayDownDistance', 0)
+445: onParameter('operation:minimumStayDownClearance', 0)
+447: onParameter('operation:minimumStayDownClearanceJl', 0)
+448: onParameter('operation:forceRetractForInsideCut', 0)
+450: onParameter('operation:noEngagementFeedrate', 39.37007874015752)
+451: onParameter('operation:doLeadIn', 1)
+452: onParameter('operation:entry_style', 'smooth')
+454: onParameter('operation:entry_radius', 0)
+456: onParameter('operation:entry_sweep', 90)
+458: onParameter('operation:entry_distance', 0.19685039370078738)
+460: onParameter('operation:leadInRadius', 0)
+461: onParameter('operation:doLeadOut', 1)
+462: onParameter('operation:exit_sameAsEntry', 1)
+463: onParameter('operation:exit_style', 'smooth')
+465: onParameter('operation:exit_radius', 0)
+467: onParameter('operation:exit_sweep', 90)
+469: onParameter('operation:exit_distance', 0.19685039370078738)
+471: onParameter('operation:leadOutRadius', 0)
+473: onParameter('operation:pierceClearance', 0.0012999999999999997)
+476: onParameter('movement:lead_in', 39.37007874015752)
+477: onParameter('movement:cutting', 39.37007874015752)
+478: onParameter('movement:lead_out', 39.37007874015752)
+479: onParameter('movement:transition', 39.37007874015752)
+480: onParameter('movement:direct', 39.37007874015752)
+481: onParameter('movement:helix_ramp', 39.37007874015752)
+482: onParameter('movement:profile_ramp', 39.37007874015752)
+483: onParameter('movement:zigzag_ramp', 39.37007874015752)
+484: onParameter('movement:ramp', 39.37007874015752)
+485: onParameter('movement:plunge', 0)
+486: onParameter('movement:predrill', 39.37007874015752)
+487: onParameter('movement:extended', 39.37007874015752)
+488: onParameter('movement:reduced', 39.37007874015752)
+489: onParameter('movement:finish_cutting', 39.37007874015752)
+490: onParameter('movement:high_feed', 0)
+491: onParameter('movement:depositing', 0)
+492: onSection()
+  currentSection.unit=1
+  currentSection.workOrigin=(0, 0, 0)
+  currentSection.workPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.wcsOrigin=(0, 0, 0)
+  currentSection.wcsPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.workOffset=0
+  currentSection.probeWorkOffset=0
+  currentSection.wcs=''
+  currentSection.wcsIndex=-1
+  currentSection.dynamicWCSOrigin=(0, 0, 0)
+  currentSection.dynamicWCSPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.dynamicWorkOffset=0
+  currentSection.fcsOrigin=(0, 0, -0.54)
+  currentSection.fcsPlane=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+  currentSection.modelOrigin=(-0, -0, -0.54)
+  currentSection.modelPlane=[[1, -0, 0], [0, 1, -0], [0, 0, 1]]
+  currentSection.type=3 (TYPE_JET)
+  currentSection.quality=0 ({AUTO})
+  currentSection.jetMode=0 (JET_MODE_THROUGH)
+  currentSection.tailstock=false
+  currentSection.partCatcher=false
+  currentSection.spindle=0
+  currentSection.feedMode=0
+  currentSection.toolOrientation=0
+  currentSection.properties=[object Object]
+  currentSection.strategy='jet2d' (STRATEGY_2D STRATEGY_FINISHING STRATEGY_JET )
+  tool.toolId='1'
+  tool.number=1
+  tool.diameterOffset=1
+  tool.lengthOffset=1
+  tool.secondaryLengthOffset=0
+  tool.turningTool=false
+  tool.jetTool=true
+  tool.holderNumber=0
+  tool.surfaceSpeed=0
+  tool.maximumSpindleSpeed=0
+  tool.spindleRPM=0
+  tool.rampingSpindleRPM=0
+  tool.clockwise=true
+  tool.numberOfFlutes=1
+  tool.threadPitch=0
+  tool.coolant=0
+  tool.material=0
+  tool.description='Wire EDM'
+  tool.comment=''
+  tool.vendor=''
+  tool.productId=''
+  tool.holderDescription='HSK63 - Blank'
+  tool.holderComment=''
+  tool.holderVendor=''
+  tool.holderProductId=''
+  tool.aggregateId=''
+  tool.unit=0
+  tool.type=29 (TOOL_WATER_JET, water jet)
+  tool.diameter=0
+  tool.tipDiameter=0
+  tool.cornerRadius=0
+  tool.taperAngle=0
+  tool.fluteLength=0
+  tool.shoulderLength=0
+  tool.shaftDiameter=0
+  tool.bodyLength=0
+  tool.overallLength=0
+  tool.shaft=[object Shaft]
+  tool.jetDiameter=0.0012999999999999997
+  tool.jetDistance=0.618740157480315
+  tool.holderTipDiameter=1.9842520285779097
+  tool.holderDiameter=2.4803149606299213
+  tool.holderLength=1.6535433070866141
+  tool.holder=[object Holder]
+  tool.boringBarOrientation=0
+  tool.compensationOffset=0
+  tool.secondaryCompensationOffset=0
+  tool.turret=0
+  tool.insertType=3 (TURNING_INSERT_ISO_C)
+  tool.holderType=0 (TURNING_INSERT_USER_DEFINED)
+  tool.compensationMode=0 (TOOL_COMPENSATION_INSERT_CENTER)
+  tool.inscribedCircleDiameter=0
+  tool.edgeLength=0
+  tool.noseRadius=0
+  tool.reliefAngle=0
+  tool.thickness=0
+  tool.grooveWidth=0
+  tool.crossSection=''
+  tool.tolerance='M'
+  tool.pitch=0
+  tool.hand='R'
+  tool.clamping=''
+  tool.manualToolChange=false
+  tool.breakControl=false
+  tool.liveTool=true
+  tool.tappingFeedrate=0
+  tool.holder[0] H=0 D=1.9842520285779097
+  tool.holder[1] H=0.03937007874015748 D=2.0629921860582248
+  tool.holder[2] H=0.5905511811023622 D=2.0629921860582248
+  tool.holder[3] H=0 D=2.440944881889764
+  tool.holder[4] H=0.01968503937007874 D=2.4803149606299213
+  tool.holder[5] H=0.1377952755905512 D=2.4803149606299213
+  tool.holder[6] H=0.03937007874015748 D=2.343936980239988
+  tool.holder[7] H=0 D=2.284881862129752
+  tool.holder[8] H=0.07874015748031496 D=2.284881862129752
+  tool.holder[9] H=0 D=2.343936980239988
+  tool.holder[10] H=0.03937007874015748 D=2.4803149606299213
+  tool.holder[11] H=0.6889763779527559 D=2.4803149606299213
+  tool.holder[12] H=0.01968503937007874 D=2.440944881889764
+  STATE position=[0.802224, -0.03026, 0.5]
+  STATE power=OFF
+  STATE radiusCompensation=RADIUS_COMPENSATION_OFF // off
+493: onRapid(-2.1369453490249755, 1.4999999399260273, 0.5999999909889041)
+494: onRapid(-2.1369453490249755, 1.4999999399260273, 0)
+495: onPower(true)
+495: onCommand(COMMAND_POWER_ON)
+496: onParameter('action', 'pierce')
+497: onMovement(MOVEMENT_LEAD_IN /*lead in*/)
+497: onLinear(-1.940094955324188, 1.4999999399260273, 0, 39.37007874015748)
+498: onMovement(MOVEMENT_CUTTING /*cutting*/)
+498: onCircular(false, -2.299999927911233, 1.4999999399260273, 0, -1.940094955324188, 1.4999999399260273, 0, 39.37007874015748)
+  direction: CCW
+  sweep: 360deg
+  normal: X=0 Y=0 Z=1 (XY)
+  radius: 0.359905
+499: onMovement(MOVEMENT_LEAD_OUT /*lead out*/)
+499: onLinear(-2.1369453490249755, 1.4999999399260273, 0, 39.37007874015748)
+500: onPower(false)
+500: onCommand(COMMAND_POWER_OFF)
+501: onMovement(MOVEMENT_RAPID /*rapid*/)
+501: onRapid(-2.1369453490249755, 1.4999999399260273, 0.5999999909889041)
+502: onSectionEnd()
+  STATE position=[-2.136945, 1.5, 0.6]
+  STATE power=OFF
+  STATE radiusCompensation=RADIUS_COMPENSATION_OFF // off
+502: onClose()

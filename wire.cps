@@ -97,6 +97,7 @@ properties = {
 
 var gFormat = createFormat({ prefix: "G", decimals: 0 });
 var mFormat = createFormat({ prefix: "M", decimals: 0 });
+var tFormat = createFormat({ prefix: "T", decimals: 0 });
 
 var xyzFormat = createFormat({ decimals: unit == MM ? 3 : 4 });
 var feedFormat = createFormat({ decimals: unit == MM ? 1 : 2 });
@@ -469,6 +470,8 @@ function setDeviceMode(enable) {
 
 function onPower(power) {
   setDeviceMode(power);
+  writeBlock(tFormat.format(91))
+  // writeBlock(gFormat.format(41));
 }
 
 function onRapid(_x, _y, _z) {
